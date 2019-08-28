@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 races = Race.create([
- { name: 'Dragonborn', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png', speed: 30, bonus: 'Strength +2, Charisma +1', siz: 'Medium' },
- { name: 'Dwarf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png', speed: 25, bonus: 'Constitution +2', siz: 'Medium' },
- { name: 'Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png', speed: 30, bonus: 'Dexterity +2', siz: 'Medium' },
- { name: 'Gnome', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.pngpng', speed: 25, bonus: 'Intelligence +2', siz: 'Small' },
- { name: 'Half-Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png', speed: 30, bonus: 'Charisma +2, Any +1, Any +1', siz: 'Medium' },
- { name: 'Halfling', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/256/420/618/636271789409776659.png', speed: 25, bonus: 'Dexterity +2', siz: 'Small' },
- { name: 'Half-Orc', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png', speed: 30, bonus: 'Strength +2, Constitution +1', siz: 'Medium' },
- { name: 'Human', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/258/420/618/636271801914013762.png', speed: 30, bonus: '+1 All', siz: 'Medium' },
- { name: 'Tiefling', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png', speed: 30, bonus: 'Charisma +2, Intelligence +1', siz: 'Medium' }
+ { name: 'Dragonborn', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png', speed: 30, bonus: 'Strength +2, Charisma +1', size: 'Medium' },
+ { name: 'Dwarf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png', speed: 25, bonus: 'Constitution +2', size: 'Medium' },
+ { name: 'Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png', speed: 30, bonus: 'Dexterity +2', size: 'Medium' },
+ { name: 'Gnome', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.pngpng', speed: 25, bonus: 'Intelligence +2', size: 'Small' },
+ { name: 'Half-Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png', speed: 30, bonus: 'Charisma +2, Any +1, Any +1', size: 'Medium' },
+ { name: 'Halfling', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/256/420/618/636271789409776659.png', speed: 25, bonus: 'Dexterity +2', size: 'Small' },
+ { name: 'Half-Orc', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png', speed: 30, bonus: 'Strength +2, Constitution +1', size: 'Medium' },
+ { name: 'Human', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/258/420/618/636271801914013762.png', speed: 30, bonus: '+1 All', size: 'Medium' },
+ { name: 'Tiefling', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png', speed: 30, bonus: 'Charisma +2, Intelligence +1', size: 'Medium' }
  ])
 
  klasses = Klass.create([
