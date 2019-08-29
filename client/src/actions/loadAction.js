@@ -4,8 +4,8 @@ import { getWeapons } from './weaponActions';
 
 export const loadSeed = () => {
  return dispatch => Promise.all([
-   dispatch(getRaces()),
    dispatch(getKlasses()),
+   dispatch(getRaces()),
    dispatch(getWeapons())
  ]);
 }

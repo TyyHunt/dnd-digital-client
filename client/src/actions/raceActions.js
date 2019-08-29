@@ -9,7 +9,7 @@ export const getRaces = () => {
       })
       .catch(error => console.log(error));
   };
-}
+} 
 
 export const setRaces = races => {
   return {
