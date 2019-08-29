@@ -14,6 +14,6 @@ export const getRaces = () => {
 export const setRaces = races => {
   return {
     type: types.REQUEST_RACES,
-    races
+    races: races
   }
 }

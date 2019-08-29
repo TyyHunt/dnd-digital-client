@@ -3,7 +3,11 @@ import { connect } from 'react-redux'
 import Race from './race'
 
 class RacesContainer extends Component {
-
+  constructor(props){
+    super(props);
+    this.state = {
+    }
+  }
   renderRaces = () => this.props.races.map((race, id) => <Race key={id} race={race} />)
 
   render() {
