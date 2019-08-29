@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 //import Race from './race'
 
-export const RacesContainer = ({ race }) =>
+export const RacesContainer = ({ races }) =>
   <div>
     <h1>Races</h1>
-    {race.map(race =>
+    {races.map(race =>
     <div>
       <img src={race.img_url} alt={race.name} />
       <h5>{race.name}</h5>
@@ -16,8 +16,8 @@ export const RacesContainer = ({ race }) =>
     )}
   </div>;
 
-const mapStateToProps = ({ race }) => ({
-  race,
+const mapStateToProps = ({ races }) => ({
+  races,
 });
 
 
