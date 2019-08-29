@@ -1,1 +1,3 @@
 export const REQUEST_RACES = "REQUEST_RACES"
+export const REQUEST_KLASSES = "REQUEST_KLASSES"
+export const REQUEST_DATA = "REQUEST_DATA"
