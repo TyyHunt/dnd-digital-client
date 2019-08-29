@@ -1,15 +1,17 @@
 import React from 'react'
 
-const Race = props => {
+const Race = race => {
+
+  
   return (
     <div>
-      <img src={props.img_url} alt={props.name} />
-      <li>{props.name}</li>
-      <li>{props.speed}</li>
-      <li>{props.bonus}</li>
-      <li>{props.size}</li>
+      <img src={race.img_url} alt={race.name} />
+      <h5>{race.name}</h5>
+      <h5>{race.speed}</h5>
+      <h5>{race.bonus}</h5>
+      <h5>{race.size}</h5>
     </div>
-  );
+    );
 };
 
 export default Race;
