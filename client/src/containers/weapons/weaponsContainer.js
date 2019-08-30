@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { Table, Container } from 'react-bootstrap';
 
 export const WeaponsContainer = ({ weapons }) =>
-  <div style={{backgroundColor: 'olive'}}>
+  <div style={{backgroundColor: '#fff'}}>
     <Container style={{ padding: '10px'}}>
       <h1>Weapons</h1>
-      <Table striped bordered hover variant="dark" style={{backgroundColor: 'grey'}}>
+      <Table striped hover variant="dark" style={{backgroundColor: 'grey', 'border-radius': '25px'}}>
         <thead>
           <tr>
             <th>#</th>

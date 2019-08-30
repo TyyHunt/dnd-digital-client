@@ -6,14 +6,14 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import '../../containers/containers.css'
 
 export const RacesContainer = ({ races }) =>
-  <div style={{backgroundColor: 'olive'}}>
+  <div style={{backgroundColor: '#fff'}}>
     <Container style={{ padding: '10px'}}>
       <h1>Races</h1>
       <CardColumns>
         {races.map(race =>
           <Card className='shadow' style={{height: '550px'}}>
             <Card.Img variant="top" src={race.img_url} alt={race.name} style={{height: '350px'}}/>
-            <Card.Body style={{backgroundColor: 'grey'}}>
+            <Card.Body style={{backgroundColor: 'grey', 'border-radius': '25px'}}>
               <Card.Title>{race.name}</Card.Title>
               <Card.Text>
                 <p>Race Bonus: {race.bonus}</p>
