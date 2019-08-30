@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 export const KlassesContainer = ({ klasses }) =>
   <div>
-    <h1>Races</h1>
+    <h1>Classes</h1>
     {klasses.map(klass =>
     <div>
       <img src={klass.img_url} alt={klass.name} />
@@ -14,7 +14,7 @@ export const KlassesContainer = ({ klasses }) =>
   </div>;
 
 const mapStateToProps = ({ klasses }) => ({
- klasses,
+  klasses,
 });
 
 

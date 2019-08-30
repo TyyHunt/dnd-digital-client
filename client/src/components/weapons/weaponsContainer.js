@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { Table, Container } from 'react-bootstrap';
 
 export const WeaponsContainer = ({ weapons }) =>
-  <div>
+  <Container>
     <Table striped bordered hover variant="dark">
       <thead>
         <tr>
@@ -24,7 +24,7 @@ export const WeaponsContainer = ({ weapons }) =>
         )}
       </tbody>
     </Table>
-  </div>;
+  </Container>;
 
 const mapStateToProps = ({ weapons }) => ({
   weapons,
