@@ -9,7 +9,7 @@ races = Race.create([
  { name: 'Dragonborn', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png', speed: 30, bonus: 'Strength +2, Charisma +1', size: 'Medium' },
  { name: 'Dwarf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png', speed: 25, bonus: 'Constitution +2', size: 'Medium' },
  { name: 'Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png', speed: 30, bonus: 'Dexterity +2', size: 'Medium' },
- { name: 'Gnome', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.pngpng', speed: 25, bonus: 'Intelligence +2', size: 'Small' },
+ { name: 'Gnome', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.png', speed: 25, bonus: 'Intelligence +2', size: 'Small' },
  { name: 'Half-Elf', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png', speed: 30, bonus: 'Charisma +2, Any +1, Any +1', size: 'Medium' },
  { name: 'Halfling', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/256/420/618/636271789409776659.png', speed: 25, bonus: 'Dexterity +2', size: 'Small' },
  { name: 'Half-Orc', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png', speed: 30, bonus: 'Strength +2, Constitution +1', size: 'Medium' },
@@ -18,18 +18,18 @@ races = Race.create([
  ])
 
  klasses = Klass.create([
-  {name: 'Barbarian', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/342/420/618/636272680339895080.png', hit_die: 12},
-  {name: 'Bard', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png', hit_die: 8},
-  {name: 'Cleric', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/371/420/618/636272706155064423.png', hit_die: 8},
-  {name: 'Druid', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/346/420/618/636272691461725405.png', hit_die: 8},
-  {name: 'Fighter', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/359/420/618/636272697874197438.png', hit_die: 10},
-  {name: 'Monk', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/489/420/618/636274646181411106.png', hit_die: 8},
-  {name: 'Paladin', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/365/420/618/636272701937419552.png', hit_die: 10},
-  {name: 'Ranger', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/367/420/618/636272702826438096.png', hit_die: 10},
-  {name: 'Rogue', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/384/420/618/636272820319276620.png', hit_die: 8},
-  {name: 'Sorcerer', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/485/420/618/636274643818663058.png', hit_die: 6},
-  {name: 'Warlock', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/375/420/618/636272708661726603.png', hit_die: 8},
-  {name: 'Wizard', img_url: 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/357/420/618/636272696881281556.png', hit_die: 6},
+  {name: 'Barbarian', img_url: 'http://i.imgur.com/GYY1nbt.png', hit_die: 12},
+  {name: 'Bard', img_url: 'http://i.imgur.com/8T0L3xM.png', hit_die: 8},
+  {name: 'Cleric', img_url: 'http://i.imgur.com/HbCCioo.png', hit_die: 8},
+  {name: 'Druid', img_url: 'http://i.imgur.com/wRh8EMN.png', hit_die: 8},
+  {name: 'Fighter', img_url: 'http://i.imgur.com/LkPQ7nU.png', hit_die: 10},
+  {name: 'Monk', img_url: 'http://i.imgur.com/xUFoJ7g.png', hit_die: 8},
+  {name: 'Paladin', img_url: 'http://i.imgur.com/HoP8Et3.png', hit_die: 10},
+  {name: 'Ranger', img_url: 'http://i.imgur.com/dZOI1VM.png', hit_die: 10},
+  {name: 'Rogue', img_url: 'http://i.imgur.com/lSdyPDJ.png', hit_die: 8},
+  {name: 'Sorcerer', img_url: 'http://i.imgur.com/OYzZNjP.png', hit_die: 6},
+  {name: 'Warlock', img_url: 'http://i.imgur.com/UII6jeX.png', hit_die: 8},
+  {name: 'Wizard', img_url: 'http://i.imgur.com/w9k5n6j.png', hit_die: 6},
  ])
  
  weapons = Weapon.create([

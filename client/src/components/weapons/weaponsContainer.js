@@ -4,7 +4,7 @@ import { Table, Container } from 'react-bootstrap';
 
 export const WeaponsContainer = ({ weapons }) =>
   <Container>
-    <Table striped bordered hover variant="dark">
+    <Table striped bordered hover variant="dark" style={{backgroundColor: 'olive'}}>
       <thead>
         <tr>
           <th>#</th>
