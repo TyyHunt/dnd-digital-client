@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container';
-import CardColumns from 'react-bootstrap/CardColumns'
-
+import CardColumns from 'react-bootstrap/CardColumns';
+import '../../containers/containers.css'
 
 export const RacesContainer = ({ races }) =>
   <div style={{backgroundColor: 'olive'}}>
     <Container style={{ padding: '10px'}}>
       <h1>Races</h1>
-      <CardColumns >
+      <CardColumns>
         {races.map(race =>
-          <Card style={{height: '550px'}}>
+          <Card className='shadow' style={{height: '550px'}}>
             <Card.Img variant="top" src={race.img_url} alt={race.name} style={{height: '350px'}}/>
             <Card.Body style={{backgroundColor: 'grey'}}>
               <Card.Title>{race.name}</Card.Title>

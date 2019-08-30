@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import RacesContainer from './components/races/racesContainer';
-import KlassesContainer from './components/klasses/klassesContainer';
-import WeaponsContainer from './components/weapons/weaponsContainer';
+import RacesContainer from './containers/races/racesContainer';
+import KlassesContainer from './containers/klasses/klassesContainer';
+import WeaponsContainer from './containers/weapons/weaponsContainer';
+import Navigation from './containers/navbar/navbar';
 
 function App() {
 
   return (
     <div className="App">
-      <h1>DnD Digital</h1>
+      <Navigation />
       <RacesContainer />
       <KlassesContainer />
       <WeaponsContainer />
