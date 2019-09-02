@@ -5,7 +5,7 @@ import KlassesContainer from '../containers/klasses/klassesContainer';
 import WeaponsContainer from '../containers/weapons/weaponsContainer';
 import Navigation from '../containers/navbar/navbar';
 import LandingPage from './landingPage';
-import Login from '../containers/user/login'
+//import Login from '../containers/user/login'
 //import About from './container/About';
 import Signup from '../containers/user/signup';
 //import UserEntries from './container/users/UserEntries';
@@ -22,7 +22,6 @@ class Routes extends Component {
             <Route exact path="/races" component={RacesContainer} />
             <Route exact path="/classes" component={KlassesContainer} />
             <Route exact path="/weapons" component={WeaponsContainer} />
-            <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
           </Switch>
         </Router>

@@ -7,13 +7,13 @@ import '../../containers/containers.css'
 
 export const RacesContainer = ({ races }) =>
   <div >
-    <Container style={{ padding: '10px'}}>
+    <Container>
       <h1 className="title">Races</h1>
       <CardColumns>
         {races.map(race =>
-          <Card className='shadow' style={{height: '720px', opacity: 0.85}}>
+          <Card className='shadow' style={{height: '702px', opacity: 0.85}}>
             <Card.Img variant="top" src={race.img_url} alt={race.name} style={{height: '500px'}}/>
-            <Card.Body style={{backgroundColor: 'grey', 'border-radius': '25px', margin: '10px', color: 'white'}}>
+            <Card.Body style={{backgroundColor: 'grey', 'border-radius': '25px', margin: '5px', color: 'white', 'font-size': '.9em'}}>
               <Card.Title>{race.name}</Card.Title>
               <Card.Text style={{color: 'white'}}>
                 <p>Race Bonus: {race.bonus}</p>
