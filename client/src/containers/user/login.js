@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import '../../containers/containers.css'
 
 export default class Login extends Component {
   constructor(props) {
@@ -28,11 +29,11 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="login shadow">
-        <Form onSubmit={this.handleSubmit} className="loginForm">
-        <h3 className="title">Log in</h3>
-          <Form.Text className="title">
-            If you don't have a log in <a href="/signup">Sign Up</a> now!
+      <div className="loginContainer shadow">
+        <Form onSubmit={this.handleSubmit} className="userForm">
+        <h3 className="header">Log in</h3>
+          <Form.Text>
+            If you don't have a log in <a href="/signup" style={{color: "#974721"}}>Sign Up</a> now!
           </Form.Text>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>

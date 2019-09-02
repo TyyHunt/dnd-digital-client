@@ -11,11 +11,11 @@ export const RacesContainer = ({ races }) =>
       <h1 className="title">Races</h1>
       <CardColumns>
         {races.map(race =>
-          <Card className='shadow' style={{height: '700px'}}>
+          <Card className='shadow' style={{height: '720px', opacity: 0.85}}>
             <Card.Img variant="top" src={race.img_url} alt={race.name} style={{height: '500px'}}/>
-            <Card.Body style={{backgroundColor: 'grey', 'border-radius': '25px'}}>
+            <Card.Body style={{backgroundColor: 'grey', 'border-radius': '25px', margin: '10px', color: 'white'}}>
               <Card.Title>{race.name}</Card.Title>
-              <Card.Text>
+              <Card.Text style={{color: 'white'}}>
                 <p>Race Bonus: {race.bonus}</p>
                 <p>Size: {race.size}</p>
                 <p>Speed: {race.speed}ft</p>

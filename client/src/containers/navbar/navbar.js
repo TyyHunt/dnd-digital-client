@@ -18,7 +18,7 @@ const Navigation = () =>
   <Nav className="mr-auto">
     <Nav.Link href="/">Home</Nav.Link>
     <Nav.Link href="/races">Races</Nav.Link>
-    <Nav.Link href="/klasses">Classes</Nav.Link>
+    <Nav.Link href="/classes">Classes</Nav.Link>
     <Nav.Link href="/weapons">Weapons</Nav.Link>
   </Nav>
 </Navbar>

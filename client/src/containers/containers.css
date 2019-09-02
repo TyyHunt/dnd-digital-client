@@ -5,8 +5,8 @@
   border-radius: 25px;
 }
 
-.login {
-  height: 325px;
+.loginContainer {
+  height: 330px;
   width: 500px;
   margin: 30px auto;
   padding: 15px;
@@ -15,8 +15,19 @@
   opacity: .97;
 }
 
-.loginForm {
-  border: 3px solid 	#fff;
+.signupContainer {
+  height: 400px;
+  width: 500px;
+  margin-left: 750px;
+  margin-top: 75px;
+  padding: 15px;
+  background-color: 	#D3944F;
+  border-radius: 25px;
+  opacity: .97;
+}
+
+.userForm {
+  border: 1px solid 	#fff;
   border-radius: 25px;
   padding: 15px;
 }
@@ -29,6 +40,12 @@ button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
 }
 
 .title {
+  font-size: 3.75em;
+  color: 	#fff;
+  margin-bottom: 30px;
+}
+
+.header {
   color: 	#fff;
 }
 
@@ -40,4 +57,8 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
+}
+
+.fixedHeight {
+  height: 668px;
 }

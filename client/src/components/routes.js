@@ -7,7 +7,7 @@ import Navigation from '../containers/navbar/navbar';
 import LandingPage from './landingPage';
 import Login from '../containers/user/login'
 //import About from './container/About';
-//import Signup from './container/SignUp';
+import Signup from '../containers/user/signup';
 //import UserEntries from './container/users/UserEntries';
 //import UserProfile from './container/users/UserProfile';
 
@@ -20,9 +20,10 @@ class Routes extends Component {
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/races" component={RacesContainer} />
-            <Route exact path="/klasses" component={KlassesContainer} />
+            <Route exact path="/classes" component={KlassesContainer} />
             <Route exact path="/weapons" component={WeaponsContainer} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
           </Switch>
         </Router>
       </div>
