@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 
 
 const Navigation = () =>
-<Navbar bg="light" variant="light">
+<Navbar variant="dark">
   <Navbar.Brand href="/">
   <img
     alt="d20 dice"

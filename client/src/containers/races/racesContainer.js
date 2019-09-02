@@ -6,9 +6,9 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import '../../containers/containers.css'
 
 export const RacesContainer = ({ races }) =>
-  <div style={{backgroundColor: '#fff'}}>
+  <div >
     <Container style={{ padding: '10px'}}>
-      <h1>Races</h1>
+      <h1 className="title">Races</h1>
       <CardColumns>
         {races.map(race =>
           <Card className='shadow' style={{height: '700px'}}>

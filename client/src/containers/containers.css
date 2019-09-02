@@ -1,11 +1,43 @@
-.klassContainer {
-  background: url("https://www.dungeonsolvers.com/wp-content/uploads/2018/12/dragonborn_wip_1_0_by_uncannyknack_d9pb1fh-fullview.jpg") no-repeat center center;
-  background-size: cover;
-}
-
 .shadow {
  -webkit-box-shadow: 3px 3px 5px 6px #fff;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
  -moz-box-shadow:    3px 3px 5px 6px #fff;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 5px 6px #fff;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
   border-radius: 25px;
+}
+
+.login {
+  height: 325px;
+  width: 500px;
+  margin: 30px auto;
+  padding: 15px;
+  background-color: 	#D3944F;
+  border-radius: 25px;
+  opacity: .97;
+}
+
+.loginForm {
+  border: 3px solid 	#fff;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #974721;
+  border: none;
+  width: 200px;
+  color: 	#fff;
+}
+
+.title {
+  color: 	#fff;
+}
+
+nav.navbar.navbar-expand.navbar-light.bg-light {
+  background: none;
+  border: none;
+  background-color: transparent !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
 }

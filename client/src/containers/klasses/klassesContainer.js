@@ -6,7 +6,7 @@ import '../../containers/containers.css'
 
 export const KlassesContainer = ({ klasses }) =>
   <div className='klassContainer'>
-    <h1 style={{color: 'white'}}>Classes</h1>
+    <h1 className="title">Classes</h1>
     <Container style={{ padding: '10px', margain: '20px', opacity: 0.7}}>
       <Carousel style={{ height: '620px' }} >
         {klasses.map(klass =>

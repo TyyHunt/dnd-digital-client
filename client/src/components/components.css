@@ -1,15 +1,21 @@
-.homePage {
- background: url("https://cdn.pixabay.com/photo/2019/08/17/21/53/dungeons-and-dragons-4413051_1280.jpg") no-repeat center center;
- background-size: cover;
- height: 695px;
+.backgroundImage {
+ background: url("https://cdn.pixabay.com/photo/2019/08/17/21/53/dungeons-and-dragons-4413051_1280.jpg") no-repeat center center fixed;
+ background-size: 100%;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
 }
 
 .greeting {
- padding-top: 125px;
+ padding-top: 75px;
  padding-left: 400px;
 }
 
 .header {
  font-size: 3.75em;
  color: white;
+}
+
+.homePage {
+ height: 700px;
 }
