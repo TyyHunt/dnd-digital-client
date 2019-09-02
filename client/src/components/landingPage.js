@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import './components.css'
 
 export default class LandingPage extends Component {
  render() {
    return (
-    <h1>DnD Digital</h1>
+    <div className='homePage' >
+     <div className='greeting' >
+      <h1 className='header'>Bring Your Character to the 21st Century</h1>
+     </div>
+    </div>
    )
  }}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import RacesContainer from '../containers/races/racesContainer';
 import KlassesContainer from '../containers/klasses/klassesContainer';
 import WeaponsContainer from '../containers/weapons/weaponsContainer';

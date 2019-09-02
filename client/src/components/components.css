@@ -1,0 +1,15 @@
+.homePage {
+ background: url("https://cdn.pixabay.com/photo/2019/08/17/21/53/dungeons-and-dragons-4413051_1280.jpg") no-repeat center center;
+ background-size: cover;
+ height: 695px;
+}
+
+.greeting {
+ padding-top: 125px;
+ padding-left: 400px;
+}
+
+.header {
+ font-size: 3.75em;
+ color: white;
+}
