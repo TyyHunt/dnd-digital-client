@@ -7,7 +7,6 @@ export default class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        username: '',
         email: '',
         password: '',
         password_confirmation: "",
@@ -15,12 +14,16 @@ export default class Signup extends Component {
       }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
+      this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
   }
 
-
+  handleSuccessfulAuth = data => {
+    this.props.handleLogin(data);
+    this.props.history.push('/')
+  }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0 && this.state.username.length > 0;
+    return this.state.email.length > 0 && this.state.password.length > 0 && this.state.password_confirmation.length > 0;
   }
 
   handleChange = event => {
@@ -30,24 +33,26 @@ export default class Signup extends Component {
   }
 
   handleSubmit = event => {
-    const { username, email, password, password_confirmation } = this.state;
+    const { email, password, password_confirmation } = this.state;
       fetch("http://localhost:3001/api/users", {
       method: "post",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        username: username,
+      body: JSON.stringify(this.state)
+    },{
+      user: {
         email: email,
         password: password,
         password_confirmation: password_confirmation
-      })
+      }
     },
     { withCredentials: true }
-    ).then(response => {
-      if (response.data.status === "created") {
-        this.props.handleSuccessfulAuth(response.data);
+    ).then(response => response.json())
+    .then(response => {
+      if (response.status === "created") {
+        this.handleSuccessfulAuth(response.user);
       }
     })
     .catch(error => {
@@ -62,10 +67,6 @@ export default class Signup extends Component {
       <div className="signupContainer shadow">
         <Form onSubmit={this.handleSubmit} className="userForm">
           <h3 className="header">Sign Up</h3>
-          <Form.Group controlId="username">
-            <Form.Label>Username</Form.Label>
-            <Form.Control type="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
-          </Form.Group>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />

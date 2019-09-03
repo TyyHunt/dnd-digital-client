@@ -5,16 +5,23 @@ import '../../containers/containers.css'
 
 export default class Login extends Component {
   constructor(props) {
-    super(props);
-
+    super(props)
     this.state = {
-      email: "",
-      password: ""
-    };
+        email: '',
+        password: '',
+        loginErrors: ''
+      }
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
+  }
+
+  handleSuccessfulAuth = data => {
+    this.props.handleLogin(data);
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.email.length > 0 && this.state.password.length;
   }
 
   handleChange = event => {
@@ -24,22 +31,41 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
+    const { email, password } = this.state;
+      fetch("http://localhost:3001/api/sessions", {
+      method: "post",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.state)
+    },{
+      user: {
+        email: email,
+        password: password
+      }
+    },
+    { withCredentials: true }
+    ).then(response => response.json())
+    .then(response => {
+      if (response.status === "created") {
+        this.handleSuccessfulAuth(response.user);
+      }
+    })
+    .catch(error => {
+      console.log("registration error", error);
+    });
     event.preventDefault();
-    if (this.props.authenticate(this.state)) {
-      this.props.history.push('/user')
-      window.alert("You're Logged In!")
-    } else {
-      window.alert("Sorry, something went wrong. Please try logging in again.")
-    }
   }
 
   render() {
     return (
+      <div className="fixedHeight">
       <div className="loginContainer shadow">
         <Form onSubmit={this.handleSubmit} className="userForm">
-        <h3 className="header">Log in</h3>
-          <Form.Text>
-            If you don't have a log in <a href="/signup" style={{color: "#974721"}}>Sign Up</a> now!
+          <h3 className="header">Log In</h3>
+          <Form.Text className="header">
+            If you don't have an account <a href="/signup" className="signUpLink">Sign Up</a> here!
           </Form.Text>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>
@@ -53,10 +79,8 @@ export default class Login extends Component {
             Log in
           </Button>
         </Form>
-        <div></div>
+      </div>
       </div>
     );
   }
 }
-
-

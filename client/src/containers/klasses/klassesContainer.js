@@ -10,11 +10,11 @@ export const KlassesContainer = ({ klasses }) =>
     <Container style={{ padding: '10px', opacity: 0.8}}>
       <Carousel style={{ height: '575px' }} >
         {klasses.map(klass =>
-          <Carousel.Item>
+          <Carousel.Item key={klass.name}>
             <img
               className="d-block w-100"
               src="https://i.stack.imgur.com/xDoyU.png"
-              style={{ height: '520px', 'border-radius': '25px' }}  
+              style={{ height: '520px', borderRadius: '25px' }}  
               alt="white backdrop"
             />
             <Carousel.Caption style={{color: 'black'}} >

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 //import RacesContainer from './containers/races/racesContainer';
 //import KlassesContainer from './containers/klasses/klassesContainer';
@@ -6,13 +6,14 @@ import './App.css';
 //import Navigation from './containers/navbar/navbar';
 import Routes from './components/routes'
 
-function App() {
+class App extends Component {
 
+  render() {
   return (
     <div className="App">
-      <Routes />
+      <Routes/>
     </div>
-  );
+  )};
 }
 
 export default App;

@@ -62,3 +62,11 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
 .fixedHeight {
   height: 668px;
 }
+
+.signUpLink {
+  color: #974721;
+}
+
+.carousel-control-prev-icon {
+  color: black;
+}

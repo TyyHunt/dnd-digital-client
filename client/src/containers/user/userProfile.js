@@ -1,17 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container'
 
-export const UserProfile = ({ user }) =>
+export const UserProfile = props =>
   <div >
-    <Container>
-      <h1 className="title">{user.username}</h1>
+    <Container className="fixedHeight">
+      <h1 className="title">{props.email}</h1>
     </Container>
   </div>;
 
-const mapStateToProps = ({ user }) => ({
-  user,
-});
-
-
-export default connect(mapStateToProps)(UserProfile);
+export default UserProfile
