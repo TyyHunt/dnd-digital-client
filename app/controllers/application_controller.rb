@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
 
- private
+  private
 
   def logged_in?
     !!current_user

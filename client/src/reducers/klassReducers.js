@@ -5,6 +5,6 @@ export default (state = [], action) => {
     case types.REQUEST_KLASSES:
       return action.klasses;
       default:
-       return state;
-   }
- }
+      return state;
+  }
+}

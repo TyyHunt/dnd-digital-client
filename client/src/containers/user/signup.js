@@ -5,27 +5,50 @@ import '../../containers/containers.css'
 
 export default class Signup extends Component {
  constructor(props) {
-   super(props);
-
+   super(props)
    this.state = {
-     username: "",
-     email: "",
-     password: ""
-   };
- }
+       username: '',
+       email: '',
+       password: '',
+       signupErrors: ''
+     }
+     this.handleSubmit = this.handleSubmit.bind(this);
+     this.handleChange = this.handleChange.bind(this);
+   }
+
+
 
  validateForm() {
-   return this.state.email.length > 0 && this.state.password.length > 0 && this.state.username.length > 0;
+  return this.state.email.length > 0 && this.state.password.length > 0 && this.state.username.length > 0;
  }
 
  handleChange = event => {
    this.setState({
-     [event.target.id]: event.target.value
+     [event.target.name]: event.target.value
    });
  }
 
  handleSubmit = event => {
-   event.preventDefault();
+  const { email, password, password_confirmation } = this.state;
+  fetch('/users', {
+   user: {
+     email: email,
+     password: password,
+     password_confirmation: password_confirmation
+   }
+ },
+ { withCredentials: true }, {
+    method: 'post',
+    body: JSON.stringify
+  }).then(response => {
+   if (response.data.status === "created") {
+     this.props.handleSuccessfulAuth(response.data);
+   }
+ })
+ .catch(error => {
+   console.log("registration error", error);
+ });
+ event.preventDefault();
  }
 
  render() {

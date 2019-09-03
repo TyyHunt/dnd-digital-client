@@ -25,6 +25,12 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    if (this.props.authenticate(this.state)) {
+      this.props.history.push('/user')
+      window.alert("You're Logged In!")
+    } else {
+      window.alert("Sorry, something went wrong. Please try logging in again.")
+    }
   }
 
   render() {

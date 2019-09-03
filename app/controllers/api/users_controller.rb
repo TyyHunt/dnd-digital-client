@@ -1,11 +1,20 @@
 class Api::UsersController < ApplicationController
 
   def create
-    @user = User.new(user_params)
-    if @user.valid? && @user.save
-      render json: @user
+    user = User.create!(
+      email: params['user']['email'],
+      password: params['user']['password'],
+      password_confirmation: params['user']['password_confirmation']
+    )
+
+    if user
+      session[:user_id] = user.id
+      render json: {
+        status: :created,
+        user: user
+      }
     else
-      render json: @user.errors, status: 400
+      render json: { status: 500 }
     end
   end
 
@@ -15,6 +24,16 @@ class Api::UsersController < ApplicationController
 
   def destroy
     @user.destroy
+  end
+
+  def find
+    @user = User.find_by(email: params[:user][:email])
+    if @user
+      render json: @user
+    else
+      @errors = @user.errors.full_messages
+      render json: @errors
+    end
   end
 
   private

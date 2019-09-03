@@ -9,7 +9,7 @@ import LandingPage from './landingPage';
 //import About from './container/About';
 import Signup from '../containers/user/signup';
 //import UserEntries from './container/users/UserEntries';
-//import UserProfile from './container/users/UserProfile';
+import UserProfile from '../containers/user/userProfile';
 
 class Routes extends Component {
   render() {
@@ -23,6 +23,7 @@ class Routes extends Component {
             <Route exact path="/classes" component={KlassesContainer} />
             <Route exact path="/weapons" component={WeaponsContainer} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/user" component={UserProfile} />
           </Switch>
         </Router>
       </div>
