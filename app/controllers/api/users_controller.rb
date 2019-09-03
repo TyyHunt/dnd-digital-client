@@ -1,12 +1,14 @@
 class Api::UsersController < ApplicationController
+  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token
 
   def create
     user = User.create!(
-      email: params['user']['email'],
-      password: params['user']['password'],
-      password_confirmation: params['user']['password_confirmation']
-    )
-
+      username: params['username'],
+      email: params['email'],
+      password: params['password'],
+      password_confirmation: params['password_confirmation']
+      )
     if user
       session[:user_id] = user.id
       render json: {
@@ -35,11 +37,5 @@ class Api::UsersController < ApplicationController
       render json: @errors
     end
   end
-
-  private
-
-    def user_params
-      params.require(:user).permit(:username, :email, :password)
-    end
 
 end

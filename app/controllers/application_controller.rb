@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-
+  include ActionController::RequestForgeryProtection
   private
 
   def logged_in?
