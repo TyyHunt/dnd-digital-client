@@ -19,22 +19,57 @@ export const userPostFetch = user => {
  }
 }
 
-export const fetchCurrentUser = () => {
- const decodeJwt = jwt.decode(localStorage.token, 'secret');
- const storedUser = (decodeJwt.user);
+export const userLoginFetch = user => {
  return dispatch => {
-  return fetch(`/users/${storedUser.id}`)
-    .then(response => response.json())
-    .then(user => {
-     console.log(user)
-      dispatch(loginUser(user))
-    })
-    .catch(error => console.log(error));
- };
+   return fetch("http://localhost:3001/api/find", {
+     method: "POST",
+     headers: {
+       'Content-Type': 'application/json',
+       'Accept': 'application/json',
+     },
+     body: JSON.stringify({user})
+   })
+     .then(resp => resp.json())
+     .then(data => {
+        console.log(data)
+        localStorage.setItem('token',jwt.encode(data, 'secret'))
+        dispatch(loginUser(data.user))
+     })
+  }
 }
 
+export const getProfileFetch = () => {
+ return dispatch => {
+  const token = localStorage.token;
+  const decodeJwt = token ? (jwt.decode(localStorage.token, 'secret').user.id) : undefined ;
+  
+   if (token) {
+     return fetch(`http://localhost:3001/api/users/${decodeJwt}`, {
+       method: "GET",
+       headers: {
+         'Content-Type': 'application/json',
+         Accept: 'application/json',
+         'Authorization': `Bearer ${token}`
+       }
+     })
+       .then(resp => resp.json())
+       .then(data => {
+        console.log(data)
+         if (data.message) {
+           localStorage.removeItem("token")
+         } else {
+           dispatch(loginUser(data))
+         }
+       })
+   }
+ }
+}
 
-const loginUser = userObj => ({
+export const logoutUser = () => ({
+ type: types.LOGOUT_USER
+})
+
+export const loginUser = userObj => ({
    type: types.LOGIN_USER,
    user: userObj
 })

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :weapons, :races, :klasses
     delete :logout, to: "sessions#logout"
     get :logged_in, to: "sessions#logged_in"
-    get :find, to: "users#find"
+    post :find, to: "users#find"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

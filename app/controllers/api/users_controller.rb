@@ -29,9 +29,12 @@ class Api::UsersController < ApplicationController
   end
 
   def find
-    @user = User.find_by(email: params[:user][:email])
+    @user = User.find_by(email: params["user"]["email"])
+                .try(:authenticate, params["user"]["password"])
     if @user
-      render json: @user
+      render json: {
+        user: @user
+      } 
     else
       @errors = @user.errors.full_messages
       render json: @errors

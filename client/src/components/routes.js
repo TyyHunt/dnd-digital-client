@@ -6,14 +6,21 @@ import KlassesContainer from '../containers/klasses/klassesContainer';
 import WeaponsContainer from '../containers/weapons/weaponsContainer';
 import Navigation from '../containers/navbar/navbar';
 import LandingPage from './landingPage';
-//import Login from '../containers/user/login'
-//import About from './container/About';
 import Signup from '../containers/user/signup';
-//import UserEntries from './container/users/UserEntries';
 import UserProfile from '../containers/user/userProfile';
-import {userPostFetch} from '../actions/userActions';
+import { getProfileFetch } from '../actions/userActions';
+import { getKlasses } from '../actions/klassActions';
+import { getRaces } from '../actions/raceActions';
+import { getWeapons } from '../actions/weaponActions'
 
 class Routes extends Component {
+
+  componentDidMount = () => {
+    this.props.getProfileFetch();
+    this.props.getKlasses();
+    this.props.getRaces();
+    this.props.getWeapons()
+  }
 
   render() {
     return (
@@ -35,7 +42,12 @@ class Routes extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+  getProfileFetch: () => dispatch(getProfileFetch()),
+  getKlasses: () => dispatch(getKlasses()),
+  getRaces: () => dispatch(getRaces()),
+  getWeapons: () => dispatch(getWeapons())
 })
+
+//userPostFetch: userInfo => dispatch(userPostFetch(userInfo)),
 
 export default connect(null, mapDispatchToProps)(Routes);

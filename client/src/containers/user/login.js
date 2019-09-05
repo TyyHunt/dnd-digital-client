@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
+import {userLoginFetch} from '../../actions/userActions';
 import '../../containers/containers.css'
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -13,13 +15,7 @@ export default class Login extends Component {
       }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
-      this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
   }
-
-  handleSuccessfulAuth = data => {
-    this.props.handleLogin(data);
-  }
-
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length;
   }
@@ -31,26 +27,8 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-      fetch("http://localhost:3001/api/sessions", {
-      method: "post",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'credentials': 'include',
-      },
-      body: JSON.stringify(this.state)
-    },
-    { withCredentials: true }
-    ).then(response => response.json())
-    .then(response => {
-      if (response.status === "created") {
-        this.handleSuccessfulAuth(response.user);
-      }
-    })
-    .catch(error => {
-      console.log("registration error", error);
-    });
     event.preventDefault();
+    this.props.userLoginFetch(this.state)
   }
 
   render() {
@@ -79,3 +57,9 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
+})
+
+export default connect(null, mapDispatchToProps)(Login);

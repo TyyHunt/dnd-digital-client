@@ -49,6 +49,12 @@ button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
   color: 	#fff;
 }
 
+.logoutButton {
+  background-color: #974721;
+  color: 	#fff;
+  border: none;
+}
+
 nav.navbar.navbar-expand.navbar-light.bg-light {
   background: none;
   border: none;
