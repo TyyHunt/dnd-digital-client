@@ -31,19 +31,14 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-    const { email, password } = this.state;
       fetch("http://localhost:3001/api/sessions", {
       method: "post",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'credentials': 'include',
       },
       body: JSON.stringify(this.state)
-    },{
-      user: {
-        email: email,
-        password: password
-      }
     },
     { withCredentials: true }
     ).then(response => response.json())

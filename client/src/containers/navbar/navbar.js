@@ -1,9 +1,10 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import { connect } from 'react-redux';
 import Nav from 'react-bootstrap/Nav';
 
 
-export const Navigation = props =>
+export const Navigation = ({user}) =>
   <Navbar variant="dark">
     <Navbar.Brand href="/">
     <img
@@ -23,10 +24,14 @@ export const Navigation = props =>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-right">
         <Navbar.Text style={{ paddingLeft: '700px', color: 'white' }}>
-          Signed in as:  {props.email || "Not Logged In"}
+          Signed in as:  { user.username || "Not Logged In" }
         </Navbar.Text>
     </Navbar.Collapse>
     </Nav>
   </Navbar>;
 
-export default Navigation
+const mapStateToProps = ({ user }) => ({
+  user,
+});
+
+export default connect(mapStateToProps)(Navigation);

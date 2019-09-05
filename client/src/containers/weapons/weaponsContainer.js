@@ -6,7 +6,7 @@ export const WeaponsContainer = ({ weapons }) =>
   <div >
     <Container style={{ padding: '10px'}}>
       <h1 className="title">Weapons</h1>
-      <Table striped hover variant="dark" style={{backgroundColor: 'grey', 'border-radius': '25px'}}>
+      <Table striped hover variant="dark" style={{backgroundColor: 'grey', borderRadius: '25px'}}>
         <thead>
           <tr>
             <th>#</th>
@@ -17,7 +17,7 @@ export const WeaponsContainer = ({ weapons }) =>
         </thead>
         <tbody>
           {weapons.map(weapon =>
-          <tr>
+          <tr key={weapon.id}>
             <td>{weapon.id}</td>
             <td>{weapon.name}</td>
             <td>{weapon.damage}</td>
