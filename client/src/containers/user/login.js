@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import {userLoginFetch} from '../../actions/userActions';
@@ -28,7 +29,8 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.userLoginFetch(this.state)
+    this.props.userLoginFetch(this.state);
+    this.props.history.push('/user');
   }
 
   render() {
@@ -62,4 +64,6 @@ const mapDispatchToProps = dispatch => ({
   userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
 })
 
-export default connect(null, mapDispatchToProps)(Login);
+withRouter(Login);
+
+export default withRouter(connect(null, mapDispatchToProps)(Login));

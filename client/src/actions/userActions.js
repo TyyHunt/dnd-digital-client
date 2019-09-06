@@ -41,9 +41,9 @@ export const userLoginFetch = user => {
 export const getProfileFetch = () => {
  return dispatch => {
   const token = localStorage.token;
-  const decodeJwt = token ? (jwt.decode(localStorage.token, 'secret').user.id) : undefined ;
-  
+  const decodeJwt = token ? (jwt.decode(token, 'secret').user.id) : undefined ;
    if (token) {
+    console.log(decodeJwt)
      return fetch(`http://localhost:3001/api/users/${decodeJwt}`, {
        method: "GET",
        headers: {

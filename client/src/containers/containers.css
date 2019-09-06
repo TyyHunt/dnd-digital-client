@@ -76,3 +76,7 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
 .carousel-control-prev-icon {
   color: black;
 }
+
+a, a:hover {
+  color: 	#fff;
+}
