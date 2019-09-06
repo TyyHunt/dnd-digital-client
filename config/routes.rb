@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :characters
   namespace :api do
     resources :users
+    resources :characters
     resources :sessions, only: [:create]
     resources :weapons, :races, :klasses
     delete :logout, to: "sessions#logout"
