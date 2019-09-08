@@ -18,7 +18,7 @@ class Login extends Component {
       this.handleChange = this.handleChange.bind(this);
   }
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length;
+    return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
   handleChange = event => {
@@ -63,7 +63,5 @@ class Login extends Component {
 const mapDispatchToProps = dispatch => ({
   userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
 })
-
-withRouter(Login);
 
 export default withRouter(connect(null, mapDispatchToProps)(Login));

@@ -21,7 +21,10 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
+    render json: {
+      user: @user,
+      characters: @user.characters,
+    }
   end
 
   def destroy
@@ -33,7 +36,8 @@ class Api::UsersController < ApplicationController
                 .try(:authenticate, params["user"]["password"])
     if @user
       render json: {
-        user: @user
+        user: @user,
+        characters: @user.characters
       } 
     else
       @errors = @user.errors.full_messages

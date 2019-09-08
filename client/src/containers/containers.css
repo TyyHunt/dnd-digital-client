@@ -21,13 +21,39 @@
   margin-left: 750px;
   margin-top: 75px;
   padding: 15px;
-  background-color: 	#D3944F;
+  background-color: #D3944F;
+  border-radius: 25px;
+  opacity: .97;
+}
+
+.characterContainer {
+  width: 700px;
+  margin: auto;
+  margin-top: 75px;
+  padding: 15px;
+  background-color: #D3944F;
   border-radius: 25px;
   opacity: .97;
 }
 
 .userForm {
-  border: 1px solid 	#fff;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.characterForm {
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.individualCharacter {
+  margin: auto;
+  margin-top: 30px;
+  width: 75%;
+  background-color:	#D3944F;
+  border: 3px solid #fff;
   border-radius: 25px;
   padding: 15px;
 }
@@ -36,6 +62,14 @@ button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
   background-color: #974721;
   border: none;
   width: 200px;
+  color: 	#fff;
+}
+
+.loadCharacterButton, .deleteCharacterButton {
+  margin: 10px;
+  background-color: #974721;
+  border: none;
+  width: 150px;
   color: 	#fff;
 }
 
@@ -66,7 +100,11 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
 }
 
 .fixedHeight {
-  height: 668px;
+  height: 685px;
+}
+
+.characterHeight {
+  height: 100%;
 }
 
 .signUpLink {
@@ -79,4 +117,27 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
 
 a, a:hover {
   color: 	#fff;
+}
+
+hr {
+  background-color: #fff;
+}
+
+.charactersKlassImg {
+  position: absolute;
+  top: 125px;
+  right: 0;
+  width: 50%;
+  height: 75px;
+  border: 2px solid #974721;
+}
+
+.charactersRaceImg {
+  position: relative;
+  height: 200px;
+  border: 2px solid #974721;
+}
+
+.characterInfo {
+  text-align: left;
 }

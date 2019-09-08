@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :characters
+  
   namespace :api do
     resources :users
     resources :characters

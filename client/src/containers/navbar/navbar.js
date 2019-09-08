@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
@@ -12,6 +13,7 @@ class Navigation extends Component {
     event.preventDefault()
     localStorage.removeItem("token")
     this.props.logoutUser()
+    this.props.history.push('/')
   }
   render() {
     return (<Navbar variant="dark">
@@ -33,10 +35,10 @@ class Navigation extends Component {
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-right">
       <Navbar.Text style={{ paddingLeft: '700px', color: 'white' }}>
-          { this.props.user.username ? `Signed in as: ${this.props.user.username}` : null }
+          { this.props.user.user ? `Signed in as: ${this.props.user.user.username}` : null }
         </Navbar.Text>
         <Navbar.Text style={{ paddingLeft: '10px', color: 'white' }}>
-          { this.props.user.username ? (<Button className="logoutButton" onClick={this.handleClick}>Log Out</Button> ) : null }
+          { this.props.user.user ? (<Button className="logoutButton" onClick={this.handleClick}>Log Out</Button> ) : null }
         </Navbar.Text>
     </Navbar.Collapse>
     </Nav>
@@ -55,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
   logoutUser: () => dispatch(logoutUser())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation));

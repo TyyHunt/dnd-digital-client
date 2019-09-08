@@ -6,7 +6,6 @@ import { Button } from "react-bootstrap";
 import './components.css'
 
 class LandingPage extends Component {
-
   handleClick = (event) => {
     event.preventDefault();
     this.props.history.push('/user')
@@ -17,7 +16,7 @@ class LandingPage extends Component {
       <div className='homePage' >
         <div className='greeting' >
           <h1 className='mainHeader'>Bring Your Character to the 21st Century</h1>
-          { this.props.user.username 
+          { this.props.user.user
             ? <Button className="userButton" type="submit" onClick={this.handleClick}>Go To Your Profile Page</Button>
             : <Login /> }
         </div>
