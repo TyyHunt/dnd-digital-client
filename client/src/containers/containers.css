@@ -48,14 +48,24 @@
   padding: 15px;
 }
 
+.updateShowForm {
+  margin-left: 245px;
+  width: 50%;
+  align-content: flex-start;
+}
+
 .individualCharacter {
   margin: auto;
-  margin-top: 30px;
-  width: 75%;
-  background-color:	#D3944F;
-  border: 3px solid #fff;
-  border-radius: 25px;
   padding: 15px;
+  
+}
+
+.characterShowPage {
+  text-align: left;
+  width: 100%;
+  height: 900px;
+  background: url("https://jaspersrantings.files.wordpress.com/2012/12/basic-dd-character-sheet-updated_page_1.jpg?w=400&zoom=2") no-repeat center center;
+  background-size: contain;
 }
 
 button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
@@ -87,6 +97,14 @@ button.loginButton.btn.btn-primary.disabled, .btn-primary:disabled {
   background-color: #974721;
   color: 	#fff;
   border: none;
+}
+
+.characterControlButton {
+  margin-top: 70px;
+  background-color: #974721;
+  color: 	#fff;
+  border: none;
+  width: 200px;
 }
 
 nav.navbar.navbar-expand.navbar-light.bg-light {
@@ -123,21 +141,41 @@ hr {
   background-color: #fff;
 }
 
-.charactersKlassImg {
-  position: absolute;
-  top: 125px;
-  right: 0;
-  width: 50%;
-  height: 75px;
-  border: 2px solid #974721;
-}
-
-.charactersRaceImg {
-  position: relative;
+.charactersIndexImg {
   height: 200px;
-  border: 2px solid #974721;
 }
 
 .characterInfo {
   text-align: left;
+  color: #fff;
+}
+
+.characterIndexHR {
+  width: 600px;
+  border: 2px solid #fff;
+}
+
+.characterHeaderHR {
+  border: 2px solid #fff;
+}
+
+.characterName {
+  padding-top: 27px;
+  height: 50px;
+}
+
+.characterKlass {
+  padding-top: 23px;
+}
+
+.characterHealth {
+  padding-top: 23px;
+  padding-left: 122px;
+}
+
+.statRow {
+  padding-top: 127px;
+}
+.statPadding {
+  padding-top: 10px;
 }

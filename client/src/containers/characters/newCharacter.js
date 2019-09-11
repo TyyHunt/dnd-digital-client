@@ -191,7 +191,7 @@ class NewCharacter extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user,
+  user: state.user.user,
   races: state.races,
   klasses: state.klasses,
   weapons: state.weapons

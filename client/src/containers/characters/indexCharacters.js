@@ -4,15 +4,12 @@ import { Button } from "react-bootstrap";
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {withRouter} from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import '../../containers/containers.css'
 
 class IndexCharacters extends Component {
 
-  loadCharacter = event => {
-    event.preventDefault()
-  }
 
   deleteCharacter = event => {
     event.preventDefault()
@@ -22,23 +19,25 @@ class IndexCharacters extends Component {
     
     return (
       <Container>
+        <hr className="characterHeaderHR"/>
           {this.props.user.characters.map(character =>
-          <div>
-            <div  key={character.name}>
+          <div key={character.id}>
+            <div key={character.id}>
               <Row className="individualCharacter">
                 <Col md={4}>
-                  <Image src={this.props.races[0].img_url} alt={this.props.races[0].name} className="charactersRaceImg" thumbnail />
-                  <Image src={this.props.klasses[0].img_url} alt={this.props.klasses[0].name} className="charactersKlassImg" roundedCircle />
+                  <Image src="https://cdn.sstatic.net/Sites/rpg/img/apple-touch-icon@2.png?v=4c03147b9ffe" alt={character.name} className="charactersIndexImg"  />
                 </Col>
                 <Col md={8} className="characterInfo">
-                  <h3>{character.name}</h3>
+                  <h1><em>{character.name}</em></h1>
                   <p>level: {character.level}</p>
                   <p>health: {character.health}</p>
                   <Row>
                     <Col md={4}>
-                      <Button className="loadCharacterButton" type="submit" onClick={this.loadCharacter}>
-                        Load Character
-                      </Button>
+                      <NavLink to={`/characters/${character.id}`}>
+                        <Button className="loadCharacterButton" type="submit" >
+                          Load Character
+                        </Button>
+                      </NavLink>
                     </Col>
                     <Col md={4}>
                       <Button className="deleteCharacterButton" type="submit" onClick={this.deleteCharacter}>
@@ -49,7 +48,9 @@ class IndexCharacters extends Component {
                 </Col>
               </Row>
             </div>
+            <hr className="characterIndexHR"/>
           </div>
+
           )}
         </Container>
     )}

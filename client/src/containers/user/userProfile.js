@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { Button } from "react-bootstrap";
 import {withRouter} from 'react-router-dom';
-import IndexCharacters from '../characters/indexCharacters'
+import IndexCharacters from '../characters/indexCharacters';
+import { getProfileFetch } from '../../actions/userActions';
+import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container'
 
 class UserProfile extends Component {
 
+  componentDidMount = () => {
+    this.props.getProfileFetch();
+  }
+
   handleClick = (event) => {
     event.preventDefault();
-    this.props.history.push('/character/new')
+    this.props.history.push('/characters/new')
   }
 
   render() {
@@ -21,4 +27,9 @@ class UserProfile extends Component {
   </div>
   )}
 }
-export default withRouter(UserProfile)
+
+const mapDispatchToProps = dispatch => ({
+  getProfileFetch: () => dispatch(getProfileFetch()),
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(UserProfile));
