@@ -20,7 +20,7 @@ class UserProfile extends Component {
   render() {
     return (
   <div>
-    <Container className="fixedHeight">
+    <Container >
       <Button className="userButton" type="submit" onClick={this.handleClick}>Add A Character</Button>
       <IndexCharacters />
     </Container>

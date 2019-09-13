@@ -30,7 +30,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.userLoginFetch(this.state);
-    this.props.history.push('/user');
+    this.props.history.push('/');
   }
 
   render() {
