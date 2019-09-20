@@ -40,7 +40,6 @@ class NewCharacter extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     this.props.characterCreateFetch(this.state);
     this.props.history.push('/user');
   }
