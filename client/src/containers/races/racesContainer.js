@@ -25,7 +25,6 @@ class RacesContainer extends Component {
 
   handleClick = event => {
     event.preventDefault();
-    console.log(Number(event.target.value))
     this.setState({
       [event.target.id]: (Number(event.target.value)) + 1,
     });
