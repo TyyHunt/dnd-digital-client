@@ -40,9 +40,6 @@ class IndexCharacters extends Component {
                       </NavLink>
                     </Col>
                     <Col md={4}>
-                      <Button className="deleteCharacterButton" type="submit" onClick={this.deleteCharacter}>
-                        Delete
-                      </Button>
                     </Col>
                   </Row>
                 </Col>

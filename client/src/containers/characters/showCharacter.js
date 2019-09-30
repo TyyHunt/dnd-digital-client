@@ -7,9 +7,9 @@ import {characterUpdateFetch} from '../../actions/characterActions';
 import Form from 'react-bootstrap/Form';
 
 class ShowCharacter extends Component {
- state = {}
+  state = {}
 
- handleChange = event => {
+handleChange = event => {
   this.setState({
     [event.target.id]: event.target.value
   });
@@ -21,20 +21,20 @@ handleSubmit = event => {
   this.props.characterUpdateFetch(this.state.id, this.state);
 }
 
- componentDidMount () {
-   const { id } = this.props.match.params
+componentDidMount () {
+  const { id } = this.props.match.params
 
-   fetch(`/characters/${id}`)
-     .then(response => response.json())
-     .then((character) => {
-       this.setState(() => (character))
-       console.log(this.state)
-     })
- }
+    fetch(`/characters/${id}`)
+      .then(response => response.json())
+      .then((character) => {
+        this.setState(() => (character))
+        console.log(this.state)
+      })
+  }
 
- render() {
+  render() {
   return (
-   <Container>
+    <Container>
     <h5 style={{color: '#fff'}}>*Edit Character Sheet When Needed</h5>
     <div className="characterShowPage">
     <Form onSubmit={this.handleSubmit} className="updateShowForm">
@@ -165,12 +165,12 @@ handleSubmit = event => {
           </Button>
         </Form>
       </div>
-   </Container>
+  </Container>
   )}
 }
 
 const mapDispatchToProps = dispatch => ({
- characterUpdateFetch: (id, userInfo) => dispatch(characterUpdateFetch(id, userInfo))
+  characterUpdateFetch: (id, userInfo) => dispatch(characterUpdateFetch(id, userInfo))
 })
 
 export default connect(null, mapDispatchToProps)(ShowCharacter);
