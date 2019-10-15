@@ -117,7 +117,7 @@ nav.navbar.navbar-expand.navbar-light.bg-light {
   color: #fff;
 }
 
-.fixedHeight {
+.fixedHeight, .extraSpace{
   height: 685px;
 }
 

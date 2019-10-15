@@ -6,9 +6,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { withRouter, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
+import { getProfileFetch } from '../../actions/userActions';
 import '../../containers/containers.css'
 
 class IndexCharacters extends Component {
+
+  componentWillMount = () => {
+    this.props.getProfileFetch();
+  }
 
 
   deleteCharacter = event => {
@@ -16,11 +21,12 @@ class IndexCharacters extends Component {
   }
   
   render() {
-    
+    console.log(this.props.user.characters);
     return (
+      
       <Container>
         <hr className="characterHeaderHR"/>
-          {this.props.user.characters.map(character =>
+          {this.props.characters.map(character =>
           <div key={character.id}>
             <div key={character.id}>
               <Row className="individualCharacter">
@@ -49,6 +55,7 @@ class IndexCharacters extends Component {
           </div>
 
           )}
+          <div className="extraSpace"></div>
         </Container>
     )}
 }
@@ -62,4 +69,8 @@ const mapStateToProps = state => ({
   klasses: state.klasses
 });
 
-export default withRouter(connect(mapStateToProps)(IndexCharacters));
+const mapDispatchToProps = dispatch => ({
+  getProfileFetch: () => dispatch(getProfileFetch()),
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(IndexCharacters));

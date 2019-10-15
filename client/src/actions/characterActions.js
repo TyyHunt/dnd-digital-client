@@ -20,21 +20,21 @@ export const characterCreateFetch = character => {
 }
 
 export const characterUpdateFetch = (id, character) => {
- return dispatch => {
-   return fetch("http://localhost:3001/api/characters/" + id, {
-     method: "PATCH",
-     headers: {
-       'Content-Type': 'application/json',
-       'Accept': 'application/json',
-     },
-     body: JSON.stringify({character})
-   })
-     .then(resp => resp.json())
-     .then(data => {
-         console.log(data)
-         dispatch(createCharacter(data.character))
-     })
- }
+  return dispatch => {
+    return fetch("http://localhost:3001/api/characters/" + id, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({character})
+    })
+      .then(resp => resp.json())
+      .then(data => {
+          console.log(data)
+          dispatch(createCharacter(data.character))
+      })
+  }
 }
 
 

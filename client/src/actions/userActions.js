@@ -41,9 +41,18 @@ export const userLoginFetch = user => {
 export const getProfileFetch = () => {
   return dispatch => {
   const token = localStorage.token;
-  const decodeJwt = token ? (jwt.decode(token, 'secret').user.id) : undefined ;
-    if (token) {
-    return fetch(`http://localhost:3001/api/users/${decodeJwt}`, {
+  console.log(localStorage.token)
+  const decodeJwt = function() {
+    let decoded = jwt.decode(token, 'secret')
+    if (decoded.user !== undefined) {
+      return decoded.user.id}
+    else {
+      return null
+    }
+  }
+  //const decodeJwt = token ? (jwt.decode(token, 'secret')) : null ;  
+    if (token && decodeJwt) {
+    return fetch(`http://localhost:3001/api/users/${decodeJwt()}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
