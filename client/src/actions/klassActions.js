@@ -2,7 +2,7 @@ import * as types from './actionTypes'
 
 export const getKlasses = () => {
   return dispatch => {
-    return fetch('/klasses')
+    return fetch('http://localhost:3001/api/klasses')
       .then(response => response.json())
       .then(data => {
         dispatch(setKlasses(data))
