@@ -4,8 +4,8 @@ export const getKlasses = () => {
   return dispatch => {
     return fetch('/klasses')
       .then(response => response.json())
-      .then(klasses => {
-        dispatch(setKlasses(klasses))
+      .then(data => {
+        dispatch(setKlasses(data))
       })
       .catch(error => console.log(error));
   };
