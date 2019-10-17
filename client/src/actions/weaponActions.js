@@ -2,7 +2,7 @@ import * as types from './actionTypes'
 
 export const getWeapons = () => {
   return dispatch => {
-    return fetch('http://localhost:3001/api/weapons')
+    return fetch('/api/weapons')
       .then(response => response.json())
       .then(weapons => {
         dispatch(setWeapons(weapons))
