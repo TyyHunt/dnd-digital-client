@@ -7,7 +7,6 @@
 #   end
 #end
 
-
  task :development do
    exec 'foreman start -p 3000'
  end
