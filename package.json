@@ -1,7 +1,7 @@
 {
   "name": "dnd-digital",
   "engines": {
-    "node": "6.3.1"
+    "node": "10.16.3"
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
