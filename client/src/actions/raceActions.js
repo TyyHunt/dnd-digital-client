@@ -2,7 +2,7 @@ import * as types from './actionTypes'
 
 export const getRaces = () => {
   return dispatch => {
-    return fetch('/api/races')
+    return fetch('/api/races.json')
       .then(response => response.json())
       .then(races => {
         dispatch(setRaces(races))
