@@ -7,5 +7,11 @@
     "build": "cd client && npm install && npm run build && cd ..",
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
-  }
+  },
+  "version": "1.0.0",
+  "description": "dnd-digital portfolio project",
+  "main": "index.js",
+  "repository": "git@github.com:TyyHunt/DnD-Digital.git",
+  "author": "Tyler Hunt <47220891+TyyHunt@users.noreply.github.com>",
+  "license": "MIT"
 }
