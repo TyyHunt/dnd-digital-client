@@ -3,7 +3,7 @@ const jwt = require('jwt-simple');
 
 export const userPostFetch = user => {
   return dispatch => {
-    return fetch("https://dnd-digital-api.herokuapp.com/api/weapons", {
+    return fetch("https://dnd-digital-api.herokuapp.com/api/users", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
