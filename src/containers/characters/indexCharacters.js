@@ -19,42 +19,49 @@ class IndexCharacters extends Component {
   deleteCharacter = event => {
     event.preventDefault()
   }
+
+  areCharactersPresent = () => {
+    if (this.props.characters !== undefined) {
+      this.props.characters.map(character =>
+        <div key={character.id}>
+          <div key={character.id}>
+            <Row className="individualCharacter">
+              <Col md={4}>
+                <Image src="https://cdn.sstatic.net/Sites/rpg/img/apple-touch-icon@2.png?v=4c03147b9ffe" alt={character.name} className="charactersIndexImg"  />
+              </Col>
+              <Col md={8} className="characterInfo">
+                <h1><em>{character.name}</em></h1>
+                <p>level: {character.level}</p>
+                <p>health: {character.health}</p>
+                <Row>
+                  <Col md={4}>
+                    <NavLink to={`/characters/${character.id}`}>
+                      <Button className="loadCharacterButton" type="submit" >
+                        Load Character
+                      </Button>
+                    </NavLink>
+                  </Col>
+                  <Col md={4}>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </div>
+          <hr className="characterIndexHR"/>
+        </div>
+      )}
+  }
   
   render() {
-    console.log(this.props.user.characters);
+
+
     return (
       
       <Container>
         <hr className="characterHeaderHR"/>
-          {this.props.characters.map(character =>
-          <div key={character.id}>
-            <div key={character.id}>
-              <Row className="individualCharacter">
-                <Col md={4}>
-                  <Image src="https://cdn.sstatic.net/Sites/rpg/img/apple-touch-icon@2.png?v=4c03147b9ffe" alt={character.name} className="charactersIndexImg"  />
-                </Col>
-                <Col md={8} className="characterInfo">
-                  <h1><em>{character.name}</em></h1>
-                  <p>level: {character.level}</p>
-                  <p>health: {character.health}</p>
-                  <Row>
-                    <Col md={4}>
-                      <NavLink to={`/characters/${character.id}`}>
-                        <Button className="loadCharacterButton" type="submit" >
-                          Load Character
-                        </Button>
-                      </NavLink>
-                    </Col>
-                    <Col md={4}>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </div>
-            <hr className="characterIndexHR"/>
-          </div>
-
-          )}
+          {
+            this.areCharactersPresent()
+          }
           <div className="extraSpace"></div>
         </Container>
     )}
