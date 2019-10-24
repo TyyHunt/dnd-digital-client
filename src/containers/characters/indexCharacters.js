@@ -21,7 +21,7 @@ class IndexCharacters extends Component {
   }
 
   areCharactersPresent = () => {
-    if (this.props.characters !== undefined) {
+    if (this.props.characters !== undefined) {return (
       this.props.characters.map(character =>
         <div key={character.id}>
           <div key={character.id}>
@@ -49,11 +49,12 @@ class IndexCharacters extends Component {
           </div>
           <hr className="characterIndexHR"/>
         </div>
-      )}
+    ))}
+      
   }
   
   render() {
-
+    console.log(this.areCharactersPresent())
 
     return (
       

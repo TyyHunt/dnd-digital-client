@@ -61,7 +61,6 @@ export const getProfileFetch = () => {
     })
       .then(resp => resp.json())
       .then(data => {
-        console.log(data.characters)
         if (data.message) {
           localStorage.removeItem("token")
         } else {
