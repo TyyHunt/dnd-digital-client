@@ -41,8 +41,6 @@ export const userLoginFetch = user => {
 export const getProfileFetch = () => {
   return dispatch => {
   const token = localStorage.token;
-  console.log(localStorage.token)
-  console.log(jwt.decode(localStorage.token, 'secret'))
   const decodeJwt = function() {
     let decoded = jwt.decode(token, 'secret')
     if (decoded.user !== undefined) {
